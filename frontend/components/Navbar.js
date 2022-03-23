@@ -6,18 +6,18 @@ function Navbar() {
             <style jsx>
                 {`
                     a {
-                        color: yellow;
+                        color: cyan;
                     }
                 `}
             </style>
-            <nav className="navbar navbar-dark bg-dark">
+            <nav>
                 <span>
                     <Link href="/">
                         <a>Home</a>
                     </Link>
                 </span>
 
-                <span className="ml-auto">
+                <span>
                     <Link href="/login">
                         <a>Sign In</a>
                     </Link>
