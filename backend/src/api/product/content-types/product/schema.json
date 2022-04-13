@@ -27,11 +27,25 @@
       "target": "api::category.category",
       "inversedBy": "products"
     },
-    "game": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::game.game",
-      "inversedBy": "products"
+    "price": {
+      "type": "decimal",
+      "required": false
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "bg": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
