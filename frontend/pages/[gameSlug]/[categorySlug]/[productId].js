@@ -14,8 +14,12 @@ function Product({ product }) {
             <h1>{product.attributes.title}</h1>
             <p>{product.attributes.description}</p>
             <p>{product.attributes.price}</p>
-            <Image src={urlBuilder(product.attributes.image.data.attributes.url)} width={250} height={200} />
-            <Image src={urlBuilder(product.attributes.bg.data.attributes.url)} width={250} height={200} />
+            {product.attributes.image.data && product.attributes.image.data.attributes.url ?
+                <Image src={urlBuilder(product.attributes.image.data.attributes.url)} width={250} height={200} /> : null
+            }
+            {product.attributes.image.data && product.attributes.bg.data.attributes.url ?
+                <Image src={urlBuilder(product.attributes.bg.data.attributes.url)} width={250} height={200} /> : null
+            }
         </>
     )
 }
@@ -79,7 +83,6 @@ export async function getStaticProps({ params }) {
                                 data {
                                     attributes {
                                         url
-                                        previewUrl
                                     }
                                 }
                             }
@@ -87,7 +90,6 @@ export async function getStaticProps({ params }) {
                                 data {
                                     attributes {
                                         url
-                                        previewUrl
                                     }
                                 }
                             }
